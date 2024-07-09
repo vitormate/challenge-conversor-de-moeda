@@ -7,11 +7,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class Consulta {
-    private final String key = "77300dc0bbe19730444b7e1a";
-    private String baseCoin;
-    private String targetCoin;
-
-    public Consulta() {}
+    private final String baseCoin;
+    private final String targetCoin;
 
     public Consulta(String baseCoin, String targetCoin) {
         this.baseCoin = baseCoin;
@@ -19,7 +16,8 @@ public class Consulta {
     }
 
     public Convertido ConversaoMoeda(double amount) throws IOException, InterruptedException {
-        String endereco = "https://v6.exchangerate-api.com/v6/" + this.key + "/pair/" + this.baseCoin + "/" +
+        String key = "77300dc0bbe19730444b7e1a";
+        String endereco = "https://v6.exchangerate-api.com/v6/" + key + "/pair/" + this.baseCoin + "/" +
                 targetCoin + "/" + amount;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()

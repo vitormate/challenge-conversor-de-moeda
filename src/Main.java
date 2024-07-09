@@ -22,9 +22,9 @@ public class Main {
         while (true) {
             System.out.println(menu);
             int choice = input.nextInt();
-            Consulta consulta = new Consulta();
-            String baseCoin = "";
-            String targetCoin = "";
+            Consulta consulta;
+            String baseCoin;
+            String targetCoin;
 
             if (choice == 7) {
                 break;
